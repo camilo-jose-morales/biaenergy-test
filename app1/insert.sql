@@ -1,0 +1,1 @@
+INSERT INTO geo (lat, lon, postcode) VALUES (%s, %s, %s)
