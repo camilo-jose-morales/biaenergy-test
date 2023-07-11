@@ -8,6 +8,11 @@ app = FastAPI()
 conn = None
 cur = None
 
+@app.get("/")
+def Hello_world():
+    return {'message': 'Hello world!'}
+
+
 @app.post("/load")
 async def upload_csv(csv_file: UploadFile = File(...)):
     
@@ -50,7 +55,7 @@ def build_pg_connection():
 
 
 def call_app2(records):
-    url = 'http://0.0.0.0:5000/postcode'
+    url = 'http://0.0.0.0:80/postcode'
     myobj = {'data': json.dumps(records)}
 
     x = requests.post(url, json = myobj)

@@ -4,10 +4,15 @@ import json
 import requests
 from concurrent.futures import ThreadPoolExecutor
 
-app2 = FastAPI()
+app = FastAPI()
 
 
-@app2.post("/postcode")
+@app.get("/")
+def helloworld():
+    return {'message': 'Hello World'}
+
+
+@app.post("/postcode")
 async def upload_csv(data: Request):
     req_info = await data.json()
     records = json.loads(req_info['data'])
@@ -59,5 +64,5 @@ def get_chunks_of_data(records):
     return list(enumerate(data_list))
 
 
-if __name__ == '__main__':
-    uvicorn.run("main:app2", host='0.0.0.0', port=5000, reload=True, server_header=False)
+# if __name__ == '__main__':
+#     uvicorn.run(app, port=80, reload=True, server_header=False)
