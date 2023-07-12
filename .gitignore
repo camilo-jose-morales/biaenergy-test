@@ -11,6 +11,9 @@
 *.tar
 *.zip
 
+#.DS_Store
+.DS_Store
+
 # Excel
 *.xlsx
 *.csv
