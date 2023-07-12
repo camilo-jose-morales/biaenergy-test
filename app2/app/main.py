@@ -1,8 +1,9 @@
-from fastapi import FastAPI, Request
-import uvicorn
 import json
-import requests
 from concurrent.futures import ThreadPoolExecutor
+
+import requests
+import uvicorn
+from fastapi import FastAPI, Request
 
 app = FastAPI()
 
@@ -26,7 +27,7 @@ def get_postcodes(records):
         print(data[0] * 100 / len(records))
         r = requests.post(url, headers=headers, json=data[1])
         return [
-            {
+            {   
                 'lat': x['query']['latitude'],
                 'lon': x['query']['longitude'],
                 'postcode': x['result'][0]['postcode']
