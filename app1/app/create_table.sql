@@ -1,5 +1,8 @@
 CREATE TABLE IF NOT EXISTS geo (
-    lat int,
-    lon int,
-    postcode int 
+    id int NOT NULL,
+    lat FLOAT,
+    lon FLOAT,
+    postcode varchar,
+    CONSTRAINT id_pk PRIMARY KEY (id)
+
 )
