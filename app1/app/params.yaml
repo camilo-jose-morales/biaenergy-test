@@ -1,5 +1,5 @@
-host: 'localhost'
-dbname: 'biaenergy'
+host: 'postgres-container'
+dbname: 'biaenergydb'
 user: 'postgres'
 password: 'admin'
 port: 5432
