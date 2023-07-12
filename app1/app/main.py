@@ -1,4 +1,5 @@
 import json
+import os
 
 import pandas as pd
 import psycopg2
@@ -8,6 +9,7 @@ from fastapi import BackgroundTasks, FastAPI, File, UploadFile
 from sqlalchemy import create_engine
 
 # ENVIRONMENT VARIABLES CONTAINED IN THE ./APP1/APP/PARAMS.YAML FILE
+os.chdir('./app')
 PARAMS = EnvYAML('params.yaml')
 
 
